@@ -182,7 +182,7 @@ footer p { margin-bottom: 15px; }
     .menu-hamburger {
         display: block;
         position: fixed; /* Fica fixo na tela */
-        top: 23px;       /* Distância do topo */
+        top: 20px;       /* Distância do topo */
         right: 25px;      /* Distância da direita */
     }
     .nav-menu {
