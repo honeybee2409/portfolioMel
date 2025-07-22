@@ -39,10 +39,27 @@ section > .container > p:first-of-type { text-align: center; max-width: 700px; m
 .nav-menu a:hover::after { width: 100%; }
 
 /* --- Estilos do Menu Mobile --- */
-.menu-hamburger .icon-fechar { display: none; }
-.menu-hamburger.ativo .icon-fechar { display: block; }
-.menu-hamburger.ativo .icon-abrir { display: none; }
-.menu-hamburger { display: none; font-size: 1.8rem; cursor: pointer; z-index: 1001; }
+.menu-hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute; /* Adicionamos isso */
+    top: 20px;        /* Ajuste a distância do topo se necessário */
+    right: 20px;      /* Ajuste a distância da direita se necessário */
+}
+
+.menu-hamburger .icon-fechar {
+    display: none;
+}
+
+.menu-hamburger.ativo .icon-fechar {
+    display: block;
+}
+
+.menu-hamburger.ativo .icon-abrir {
+    display: none;
+}
 
 /* --- Seção Principal (Hero) --- */
 .hero-section { background-color: var(--cor-amarelo-principal); padding: 60px 0; background-image: url('../imagens/fundo-favo-de-mel.svg'); background-repeat: no-repeat; background-position: right center; background-size: contain; }
