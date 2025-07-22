@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuzzCode | Desenvolvimento Web que Gera Resultados</title>
 
-    <meta name="description" content="Portfólio profissional de Mel Isis, desenvolvedora de sites criativos e funcionais.">
-    <meta name="keywords" content="desenvolvedora web, criação de sites, portfólio, html, css, javascript, Mel Isis">
-    <meta name="author" content="Mel Isis">
+    <meta name="description" content="BuzzCode: Criação de sites, landing pages e portfólios. Transformamos suas ideias em realidade digital com design criativo e código eficiente em Brasília-DF.">
+    <meta name="keywords" content="buzzcode, desenvolvedora web, criação de sites, portfólio, landing page, brasília, df, mel isis">
+    <meta name="author" content="BuzzCode">
 
     <link rel="icon" href="imagens/logo.png" type="image/png">
 
@@ -20,10 +20,10 @@
     <header class="navbar">
         <div class="container">
             <a href="#inicio" class="logo">
-                <img src="imagens/logo.png" alt="Logo Abelha Programadora">
+                <img src="imagens/logo.png" alt="Logo BuzzCode">
                 <span>BuzzCode</span>
             </a>
-            <nav>
+            <nav class="nav-principal">
                 <ul class="nav-menu">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
@@ -134,6 +134,14 @@
             <h2>O que meus clientes dizem</h2>
             <div class="testimonial-card">
                 <i class="fas fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">"A Mel é uma profissional excepcional! Ela capturou perfeitamente a essência do meu trabalho e criou um site que realmente reflete minha visão. A experiência de trabalhar com ela foi incrível, e eu não poderia estar mais feliz com o resultado!"</p>
+                <div class="testimonial-author">
+                    <p class="author-name">Maria Eduarda</p>
+                    <p class="author-project">Dona do FisherFake</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left quote-icon"></i>
                 <p class="testimonial-text">"Eu gostaria de agradecer a Mel pelo trabalho incrível no desenvolvimento do meu site! A atenção aos detalhes, a criatividade e a habilidade técnica são evidentes em cada página. O resultado final superou minhas expectativas... Recomendo seu trabalho a qualquer um que precise de um site de alta qualidade!"</p>
                 <div class="testimonial-author">
                     <p class="author-name">Sol Grisi</p>
@@ -224,12 +232,13 @@
             <p>Estou sempre aberta a novas oportunidades e colaborações. Envie-me uma mensagem ou me encontre nas redes abaixo!</p>
             <div class="contact-wrapper">
                 <div class="form-container">
-                    <form action="#" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/xkgzjbgo" method="POST">
                         <input type="text" name="nome" placeholder="Seu Nome" required>
                         <input type="email" name="email" placeholder="Seu E-mail" required>
                         <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
                         <button type="submit" class="btn">Enviar Mensagem</button>
                     </form>
+                    <div id="form-status"></div>
                 </div>
                 <div class="contact-info">
                     <h3>Meus Contatos</h3>
@@ -245,7 +254,7 @@
 
     <footer>
         <div class="container">
-            <p>Desenvolvido por <strong>@mi.honeybee</strong></p>
+            <p>&copy; 2025 BuzzCode. Todos os direitos reservados.</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/mel-isis-58544a347" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="https://github.com/honeybee2409" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -254,7 +263,6 @@
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <script src="script.js"></script>
 </body>
 </html>
