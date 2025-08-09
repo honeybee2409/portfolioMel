@@ -80,20 +80,24 @@ section > .container > p:first-of-type { text-align: center; max-width: 700px; m
 
 /* --- Seção de Projetos --- */
 .projects-section { background-color: var(--cor-fundo-claro); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
-.project-card { background-color: var(--cor-branco); border-radius: var(--borda-arredondada); box-shadow: var(--sombra-padrao); overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.projects-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+    gap: 30px; 
+}
+.project-card { background-color: var(--cor-branco); border-radius: var(--borda-arredondada); box-shadow: var(--sombra-padrao); overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; height: auto; }
 .project-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
 .project-card img { width: 100%; height: 220px; object-fit: cover; }
 .project-card h3 { font-size: 1.5rem; margin: 20px 20px 10px 20px; }
 .project-card p { padding: 0 20px; font-size: 0.95rem; flex-grow: 1; }
 .project-card a { display: block; margin: 20px; background-color: var(--cor-amarelo-principal); color: var(--cor-marrom-escuro); padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 600; }
 
-/* --- Seção de Depoimentos (ATUALIZADA PARA GRID) --- */
+/* --- Seção de Depoimentos (CORRIGIDA PARA ALTURAS DINÂMICAS) --- */
 .testimonial-section { background-color: var(--cor-marrom-escuro); color: var(--cor-branco); position: relative; overflow: hidden; }
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
-.testimonial-card { text-align: center; padding: 40px 30px; background-color: var(--cor-marrom-borda); border-radius: var(--borda-arredondada); position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start; }
+.testimonial-card { text-align: center; padding: 40px 30px; background-color: var(--cor-marrom-borda); border-radius: var(--borda-arredondada); position: relative; }
 .quote-icon { font-size: 3rem; color: var(--cor-amarelo-principal); opacity: 0.5; position: absolute; top: 20px; left: 20px; }
-.testimonial-text { font-size: 1.1rem; font-style: italic; line-height: 1.8; margin-bottom: 30px; padding-top: 30px; flex-grow: 1; }
+.testimonial-text { font-size: 1.1rem; font-style: italic; line-height: 1.8; margin-bottom: 30px; padding-top: 30px; }
 .testimonial-author .author-name { font-size: 1.3rem; font-weight: 700; color: var(--cor-amarelo-principal); }
 .testimonial-author .author-project { font-size: 1rem; color: var(--cor-creme-claro); }
 
@@ -117,7 +121,7 @@ section > .container > p:first-of-type { text-align: center; max-width: 700px; m
 .pricing-plan ul li { margin-bottom: 15px; display: flex; align-items: center; justify-content: flex-start; gap: 10px; }
 .pricing-plan ul li .fa-check { color: #28a745; }
 .pricing-plan ul li .fa-times { color: #dc3545; }
-.pricing-plan .btn { width: 100%; }
+.pricing-plan .btn { width: 100%; font-size: 1.1rem; }
 
 /* --- Seção de Contato --- */
 .contact-section { background-color: var(--cor-fundo-claro); }
@@ -150,6 +154,48 @@ footer p { margin-bottom: 15px; }
 .social-links a i { margin-right: 8px; font-size: 1.2rem; }
 .social-links a:hover { color: var(--cor-amarelo-principal); }
 
+/* --- Estilos do Modal de Planos --- */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#modal-overlay.ativo {
+    display: flex;
+}
+#modal {
+    background-color: var(--cor-branco);
+    padding: 40px;
+    border-radius: var(--borda-arredondada);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+#modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+#modal-title { font-size: 2rem; margin-bottom: 15px; color: var(--cor-marrom-borda); }
+#modal p { margin-bottom: 20px; }
+#modal-features { list-style: none; margin-bottom: 30px; }
+#modal-features li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+#modal-features li i { color: var(--cor-amarelo-principal); }
+#modal-contact-btn { width: 100%; text-align: center; }
+
 /* --- Responsividade (Media Queries) --- */
 @media (max-width: 992px) {
     .pricing-plan.popular { transform: scale(1); }
@@ -168,7 +214,7 @@ footer p { margin-bottom: 15px; }
     .menu-hamburger {
         display: block;
         position: fixed;
-        top: 16px; /* Seu ajuste fino */
+        top: 16px;
         right: 25px;
     }
     .nav-menu {
@@ -205,12 +251,6 @@ footer p { margin-bottom: 15px; }
     .contact-wrapper { flex-direction: column; gap: 40px; }
     .form-container, .contact-info { width: 100%; flex: none; }
     
-    /* CORREÇÃO PARA DEPOIMENTOS NO MOBILE */
-    .testimonial-grid {
-        grid-template-columns: 1fr; /* Garante uma única coluna */
-        gap: 30px;
-    }
-    .testimonial-card {
-        padding: 40px 20px 30px 20px; /* Ajusta o padding para ter mais respiro */
-    }
+    .testimonial-grid { grid-template-columns: 1fr; gap: 30px; }
+    .testimonial-card { padding: 40px 20px 30px 20px; }
 }
